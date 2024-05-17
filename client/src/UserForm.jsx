@@ -30,7 +30,13 @@ const UserForm = (props) => {
   }, [selectedUser]);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      const numericValue = value.replace(/\D/g, ''); 
+      setForm({ ...form, [name]: numericValue });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -93,6 +99,7 @@ const UserForm = (props) => {
         value={form.phone}
         onChange={handleChange}
         placeholder="Phone"
+        pattern="[0-9]*"
         minLength={10}
         maxLength={10}
         required
