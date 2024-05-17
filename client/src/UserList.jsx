@@ -64,7 +64,7 @@ const UserList = ({
         <tbody>
           {isLoading ? (
             <tr>
-              <td colSpan={5} style={{ textAlign: "center" }}>
+              <td colSpan={8} style={{ textAlign: "center" }}>
                 Loading....
               </td>
             </tr>
@@ -90,7 +90,7 @@ const UserList = ({
             ))
           ) : (
             <tr>
-              <td colSpan={5} style={{ textAlign: "center" }}>
+              <td colSpan={8} style={{ textAlign: "center" }}>
                 No Users Found
               </td>
             </tr>
