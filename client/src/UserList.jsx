@@ -56,6 +56,8 @@ const UserList = ({
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>DOB</th>
+            <th>Gender</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -76,9 +78,11 @@ const UserList = ({
                     checked={selectedIds.includes(user._id)}
                   />
                 </td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
+                <td>{user?.name || ""}</td>
+                <td>{user?.email || ""}</td>
+                <td>{user.phone || ""}</td>
+                <td>{user?.dob || ""}</td>
+                <td>{user?.gender || ""}</td>
                 <td>
                   <button onClick={() => selectUser(user)}>Edit</button>
                 </td>

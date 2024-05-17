@@ -20,8 +20,8 @@ function App() {
       const res = await axios.get(
         `http://localhost:3000/api/v1/user?page=${page}`
       );
-      setUsers(res.data.data);
-      setTotalPages(res.data.pagination.pages || 0);
+      setUsers(res?.data?.data);
+      setTotalPages(res?.data?.pagination?.pages || 0);
     } catch (error) {
       console.error(error);
     }finally{
